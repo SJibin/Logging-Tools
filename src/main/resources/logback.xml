@@ -2,15 +2,32 @@
 
 <configuration debug="true"> 
 
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
-    <!-- encoders are  by default assigned the type
-         ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender"> 
     <encoder>
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
 
-  <root level="info">
-    <appender-ref ref="STDOUT" />
+  <root level="debug">
+    <appender-ref ref="console" />
   </root>
 </configuration>
+
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true"
+	xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+	    <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern"
+		  value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+	    </layout>
+	</appender>
+
+	<root>
+		<level value="TRACE" />
+		<appender-ref ref="console" />
+	</root>
+
+</log4j:configuration> -->
